@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google replica</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; }
+        .layout { display: none}
+        @media (max-width: 420px) {
+            #phonelayout { display: flex; flex-direction: column; background: #f8f8f8; }
+            .mobile-toolbar {display: flex; justify-content: space-between; padding: 10px; background: #cccccc; }
+            .right-buttons { display: flex; margin-left: auto }
+            #opentabs, #openmenu { border-radius: 20%;margin-right: 10px; }
+            #gohome { border-radius: 20%; }
+            .browser-window { flex: 1; display: flex; flex-direction: column; align-items: center; }
+            #searchbar3 { width: 90%; max-width: 400px; padding: 10px; font-size: 16px; border: 1px solid #cccccc; border-radius: 20px; text-align: center; }
+            .articles { padding: 30px; }
+            .articles h4 { margin-bottom: 20px; }
+            .articles img{width:100%;align-self: center;border-radius: 20px;border: 2px solid #cccccc;}
+            .articles p { width: 90%;margin:10px 0px 10px 10px;  }
+            #articles1 {background-color: #d3d3d3;margin-bottom:30px;flex:1;display:flex;flex-direction:column;border: 2px solid #cccccc;border-radius:20px ;}
+            #articles2 {background-color: #add8e6;margin-bottom:30px;flex:1;display:flex;flex-direction:column;border: 2px solid #cccccc;border-radius:20px ; }
+            #articles3 {background-color: #90ee90;margin-bottom:30px;flex:1;display:flex;flex-direction:column;border: 2px solid #cccccc;border-radius:20px ;}
+        }
+        @media (min-width: 421px) {
+            #desktoplayout { display: flex; flex-direction: column; }
+            .toolbar { display: flex; align-items: center; padding: 10px; background: #dddddd; }
+            .toolbar button { margin:5px; padding: 5px;width:30px;height: 30px ;border-radius: 50%; }
+            .address-bar { flex: 1; padding: 5px; }
+            .browser-window { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding-top: 50px; }
+            .buttons{display: flex;gap:10px;margin-top: 20px;}
+            .button { padding: 20px;border: none; border-radius: 20px; background: #f8f8f8; cursor: pointer;}
+            #logo { margin-bottom: 10px;width: 30%; }
+            #searchbar1{width: 90%;padding: 10px; font-size: 16px; border: 1px solid #cccccc; border-radius: 20px; text-align: center; }
+            #searchbar2 { width: 90%; max-width: 850px; padding: 10px; font-size: 16px; border: 1px solid #cccccc; border-radius: 20px; text-align: center; }
+            #profile { width: 100%;height: 100%;object-fit: cover;border-radius: 50%; }
+            #profileaccess {display: flex;align-items: center;justify-content: center; width: 40px;height: 40px;border-radius: 50%; overflow: hidden;padding: 0;border: none;background: transparent;}
+            #search {width: 90%;}
+            #lucky {width: 90%; }
+            .accessibility {position: relative; top: 10px;right: 10px;display: flex;align-items: center;gap: 15px;justify-content: flex-end;}
+            #signin {padding: 8px 15px;border: 1px solid #4285F4;background-color: white;color: #4285F4;border-radius: 5px;cursor: pointer;font-size: 14px;font-weight: bold;}
+        }
+    </style>
+</head>
+<body>
+    <div id="phonelayout" class="layout">
+        <div class="mobile-toolbar">
+            <button id="gohome"><img src="images/home.png" width="30px"></button>
+            <div class="right-buttons">
+                <button id="opentabs"><img src="images/tabs.png" width="30px"></button>
+                <button id="openmenu">⋮</button>
+            </div>
+        </div>
+        <div class="browser-window">
+            <image src="images/googlelogo.png">
+            <input type="text" id="searchbar3" placeholder="Search or type URL">
+        </div>
+        <div class="articles">
+            <h4>Articles (filling purpose only)</h4>
+            <a href="https://news.google.com/home?hl=en-US&gl=US&ceid=US:en"><div id="articles1">
+                <img src="images/article1.jpg" width="article1" >
+                <p >Articles1</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, impedit. Vero nisi numquam dolor omnis quisquam consequuntur minima, temporibus ipsa debitis tenetur error velit. Expedita animi adipisci necessitatibus veritatis nisi.</p>
+            </div></a>
+            <a href="https://news.google.com/home?hl=en-US&gl=US&ceid=US:en"><div id="articles2">
+                <img src="images/article2.jpg" >
+                <p >Articles2</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde numquam qui, vero delectus cupiditate omnis molestias asperiores nisi. Neque numquam laudantium voluptas alias vero aliquid assumenda nisi ratione officiis ea.</p>
+            </div></a>
+            <a href="https://news.google.com/home?hl=en-US&gl=US&ceid=US:en"><div id="articles3">
+                <img src="images/article3.jpg">
+                <p >Articles3</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, velit vel. Placeat hic, eveniet officia porro possimus dolores ipsam similique, adipisci libero at temporibus sapiente quia illo? Nihil, excepturi tempora.</p>
+            </div></a>
+        </div>
+    </div>
+
+    <div id="desktoplayout" class="layout">
+        <div class="toolbar">
+            <button id="goback">&#8592;</button>
+            <button id="goforward">&#8594;</button>
+            <button id="reloadpage">&#x21bb;</button>
+            <input type="text" id="searchbar1" class="address-bar" placeholder="Search Google or type a URL">
+            <button id="profileacess"><img id="profile" src="images/profile.jpg"></button>
+            <button id="openmenu">⋮</button>
+        </div>
+        <div class="accessibility">
+            <p><a href="https://mail.google.com/">Gmail</a></p>
+            <p><a href="https://www.google.com/imghp">Images</a></p>
+            <p><a href="https://www.google.com">⋮⋮⋮</a></p>
+            <button id="signin">Sign in</button>
+        </div>
+        <div class="browser-window">
+            <image src="images/googlelogo.png"id="logo">
+            <input type="text" id="searchbar2" placeholder="Search Google or type a URL">
+            <div class="buttons">
+                <button id="search" class="button">Google Search</button>
+                <button id="lucky" class="button">I'm Feeling Lucky</button>
+        </div>
+    </div>
+</body>
+</html>
